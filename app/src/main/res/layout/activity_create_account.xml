@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".mains.logs.CreateAccountActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="700dp"
+            android:layout_height="700dp"
+            android:src="@drawable/ic_circle"
+            app:tint="@color/Background_component" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="540dp"
+            android:layout_height="540dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_circle"
+            app:tint="@color/Background_component_selected" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_circle"
+            app:tint="@color/Background_brighter" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="270dp"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/ic_cat"
+            app:tint="@color/Transparent" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Transparent_two"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ca_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/createAcc"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ca_whatsUr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/whatsName"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_title" />
+
+            <EditText
+                android:id="@+id/ca_etName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="60dp"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                android:focusable="true"
+                android:hint="@string/write"
+                android:singleLine="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_whatsUr" />
+
+            <TextView
+                android:id="@+id/ca_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/whatsAddress"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etName" />
+
+
+            <EditText
+                android:id="@+id/ca_etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="60dp"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                android:focusable="true"
+                android:hint="@string/write"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_address" />
+
+            <TextView
+                android:id="@+id/ca_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="@string/whatsPassword"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etAddress" />
+
+            <EditText
+                android:id="@+id/ca_etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="60dp"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                android:focusable="true"
+                android:hint="@string/write"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_password" />
+
+            <TextView
+                android:id="@+id/ca_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="@string/whatsPhone"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etPassword" />
+
+            <EditText
+                android:id="@+id/ca_etPhone"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:hint="@string/write"
+                android:inputType="phone"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ca_phone"
+                app:layout_constraintTop_toBottomOf="@+id/ca_phone" />
+
+            <TextView
+                android:id="@+id/ca_nationality"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="@string/whatsCountryCode"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ca_phone"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etPassword" />
+
+            <EditText
+                android:id="@+id/ca_etCountryCode"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="60dp"
+                android:focusable="true"
+                android:hint="+502"
+                android:inputType="phone"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                android:singleLine="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ca_phone"
+                app:layout_constraintTop_toBottomOf="@+id/ca_nationality"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/ca_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="@string/city"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etCountryCode" />
+
+            <EditText
+                android:id="@+id/ca_etCity"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="60dp"
+                android:focusable="true"
+                android:hint="@string/write"
+                android:singleLine="true"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_city"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/ca_age"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etCity" />
+
+            <EditText
+                android:id="@+id/ca_etAge"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="60dp"
+                android:focusable="true"
+                android:hint="@string/write"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textStyle="bold|italic"
+                android:background="@drawable/rounded_background_transparent"
+                style="@style/et_paddingStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_age"
+                tools:ignore="HardcodedText" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_create"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginVertical="16dp"
+                app:cardBackgroundColor="@color/Transparent"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ca_etAge">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/createAcc"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

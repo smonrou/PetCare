@@ -1,0 +1,19 @@
+<resources>
+    <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/Background</item>
+    </style>
+    <style name="timePickerTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/Background</item>
+    </style>
+    <style name="Theme.PetCare." parent="Theme.MaterialComponents.Light">
+    </style>
+    <style name="et_paddingStart" parent="Widget.AppCompat.EditText">
+        <item name="android:paddingStart">12dp</item>
+    </style>
+    <style name="horizontalPadding" parent="Widget.AppCompat.TextView">
+        <item name="android:paddingStart">12dp</item>
+        <item name="paddingEnd">12dp</item>
+    </style>
+
+
+</resources>

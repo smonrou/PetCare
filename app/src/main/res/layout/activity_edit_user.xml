@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".mains.logs.EditUserActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cv_topImage"
+                android:layout_width="210dp"
+                android:layout_height="210dp"
+                android:src="@drawable/panoramica"
+                app:civ_border_color="@color/Background_component_selected"
+                app:civ_border_width="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_topImage"
+                tools:text="Saul Monroy" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                tools:text="saulandresmm@gmail.com" />
+
+            <TextView
+                android:id="@+id/tv_yourName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_pet_name"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+            <EditText
+                android:id="@+id/et_yourName"
+                style="@style/et_paddingStart"
+                android:layout_width="match_parent"
+                android:textStyle="bold|italic"
+                android:layout_height="55dp"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/txt_pet_name"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_yourName"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_yourCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/city"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_yourName" />
+
+            <EditText
+                android:id="@+id/et_yourCity"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                style="@style/et_paddingStart"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/city"
+                app:boxBackgroundMode="outline"
+                android:textStyle="bold|italic"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_yourCity"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_yourPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/urPhone"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_yourCity" />
+
+            <EditText
+                android:id="@+id/et_yourPhone"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginEnd="36dp"
+                style="@style/et_paddingStart"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/whatsPhone"
+                android:textStyle="bold|italic"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_yourPhone"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_yourCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/urCode"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_yourPhone" />
+
+            <EditText
+                android:id="@+id/et_yourCode"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginEnd="36dp"
+                style="@style/et_paddingStart"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="+1"
+                app:boxBackgroundMode="outline"
+                android:textStyle="bold|italic"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_yourCode"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/black"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_yourAge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/urAge"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_yourCode" />
+
+            <EditText
+                android:id="@+id/et_yourAge"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/urAge"
+                app:boxBackgroundMode="outline"
+                android:textStyle="bold|italic"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                style="@style/et_paddingStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_yourAge"
+                app:startIconDrawable="@drawable/ic_user"
+                app:startIconTint="@color/black" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_changeInfo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/Transparent"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/et_yourAge">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Change_my_info"
+                        android:textAlignment="center"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/btn_Home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_changeInfo"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

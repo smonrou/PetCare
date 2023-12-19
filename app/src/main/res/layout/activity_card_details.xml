@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    tools:context=".objects.details.CardDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/cardDetails_goBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_back_row"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/cardDetails_toptext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/CardInformation"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cv_card"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_big_mastercard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_toptext" />
+
+            <TextView
+                android:id="@+id/cardDetails_formName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/cardName"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_card" />
+
+            <EditText
+                android:id="@+id/cardDetails_et_cardName"
+                style="@style/et_paddingStart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:autofillHints="Credit Card name"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/cardNickname"
+                android:inputType="none"
+                android:shadowColor="@color/Background_component"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_formName" />
+
+            <TextView
+                android:id="@+id/cardDetails_cardNumbertxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/cardNumber"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_et_cardName" />
+
+            <EditText
+                android:id="@+id/cardDetails_et_cardNumber"
+                style="@style/et_paddingStart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:autofillHints="credit card number"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/cardNumberHint"
+                android:inputType="none"
+                android:shadowColor="@color/Background_component"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_cardNumbertxt"
+                tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/cardDetails_cardExpiretxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/Due_date"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_et_cardNumber" />
+
+            <EditText
+                android:id="@+id/cardDetails_et_cardDueDate"
+                style="@style/et_paddingStart"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:autofillHints="credit card number"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="MM/YY"
+                android:inputType="none"
+                android:shadowColor="@color/Background_component"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toStartOf="@+id/cardDetails_et_cardCvv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_cardExpiretxt"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/cardDetails_cardCVVtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="CVV"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/cardDetails_et_cardCvv"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_et_cardNumber"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/cardDetails_et_cardCvv"
+                style="@style/et_paddingStart"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:autofillHints="credit card number"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="CVV"
+                android:inputType="none"
+                android:shadowColor="@color/Background_component"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardDetails_et_cardDueDate"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_cardCVVtxt"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/cardDetails_cardProprietarytxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/cardProprietary"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_et_cardCvv" />
+
+            <EditText
+                android:id="@+id/cardDetails_et_cardPropietary"
+                style="@style/et_paddingStart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:autofillHints="credit card number"
+                android:background="@drawable/rounded_background_transparent"
+                android:hint="@string/cardProprietaryHint"
+                android:inputType="none"
+                android:shadowColor="@color/Background_component"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_cardProprietarytxt" />
+
+            <Button
+                android:id="@+id/cardDetails_btn_delete"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/btn_rounded"
+                android:text="@string/delete"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails_et_cardPropietary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

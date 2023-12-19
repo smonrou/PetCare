@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/Background"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".services.WalkerServiceActivity">
+
+    <TextView
+        android:id="@+id/title_walker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/petWalkers"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:cardBackgroundColor="@color/Cream"
+        app:layout_constraintTop_toTopOf="@+id/scrollPetViews" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:cardBackgroundColor="@color/Cream"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollPetViews" />
+    <ScrollView
+        android:id="@+id/scrollPetViews"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/title_walker"
+        app:layout_constraintBottom_toTopOf="@+id/walkerService_toHome">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_walker"
+            android:layout_width="match_parent"
+            android:layout_height="570dp"
+            android:padding="8dp"/>
+    </ScrollView>
+    <ImageView
+        android:id="@+id/walkerService_toHome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_home"
+        app:tint="@color/white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

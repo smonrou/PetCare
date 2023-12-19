@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="warning">#9AF10052</color>
+    <color name="red">#D30404</color>
+    <color name="grey">#736F6F</color>
+    <color name="light_grey">#CFCCCC</color>
+    <color name="light_yellow">#FFE57F</color>
+    <color name="lighter_yellow">#D6CCA2</color>
+    <color name="almostBlack">#222222</color>
+    <color name="green">#B763A54A</color>
+
+    <color name="mid_background">#395C75</color>
+    <color name="sky_blue">#C7DEF6</color>
+    <color name="light_grey2">#C2C2C2</color>
+    <color name="darkWhite">#F2F2F2</color>
+    <color name="card">#c0a460</color>
+    <color name="notPureWhite">#fdfdfd</color>
+
+    <color name="Background">#2C3E50</color>
+    <color name="Cream">#f2edde</color>
+    <color name="Background_component">#7FB3D5</color>
+    <color name="Background_component_selected">#AED6F1</color>
+    <color name="Background_brighter">#9BE2EC</color>
+    <color name="Transparent">#65000000</color>
+    <color name="Transparent_two">#B2000000</color>
+    <color name="totalTransparent">#00000000</color>
+</resources>

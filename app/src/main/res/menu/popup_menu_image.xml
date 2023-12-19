@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/change_profilePicture"
+        android:icon="@drawable/ic_change_image"
+        android:title="@string/changePP" />
+    <item
+        android:id="@+id/view_image"
+        android:icon="@drawable/ic_view"
+        android:title="@string/viewImage" />
+</menu>
