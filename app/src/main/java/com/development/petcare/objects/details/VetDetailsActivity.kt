@@ -1,42 +1,51 @@
 package com.development.petcare.objects.details
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.development.petcare.R
 import com.development.petcare.objects.adapters.PhotoAdapter
 import com.development.petcare.objects.adapters.ServiceAdapter
-import com.development.petcare.objects.providers.PhotoProvider
-import com.development.petcare.objects.providers.ServiceProvider
+import com.development.petcare.objects.providers.VetProvider.Companion.VetList
+
 
 class VetDetailsActivity : AppCompatActivity() {
-    private lateinit var vd_name:TextView
-    private lateinit var vd_country:TextView
-    private lateinit var vd_city:TextView
-    private lateinit var vd_emergency:ImageView
-    private lateinit var vd_specialty:TextView
-    private lateinit var vd_experience:TextView
-    private lateinit var rv_services:RecyclerView
-    private lateinit var vd_species:TextView
-    private lateinit var vd_address:TextView
-    private lateinit var vd_schedule:TextView
-    private lateinit var vd_Refund:TextView
-    private lateinit var rv_photos:RecyclerView
-    private lateinit var btn_appointment:Button
-    private lateinit var vd_goBack:ImageView
+    private lateinit var vd_name: TextView
+    private lateinit var vd_country: TextView
+    private lateinit var vd_city: TextView
+    private lateinit var vd_emergency: ImageView
+    private lateinit var vd_specialty: TextView
+    private lateinit var vd_experience: TextView
+    private lateinit var rv_services: RecyclerView
+    private lateinit var rv_photos: RecyclerView
+    private lateinit var vd_species: TextView
+    private lateinit var vd_address: TextView
+    private lateinit var vd_schedule: TextView
+    private lateinit var vd_Refund: TextView
+    private lateinit var btn_appointment: Button
+    private lateinit var vd_goBack: ImageView
+    private lateinit var vd_vetType: TextView
 
+
+    private var id = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vet_details)
+        id = intent.getStringExtra("id").toString()
         initComponents()
         initListeners()
         initRecyclerViews()
+        setValues()
+
+
     }
-    private fun initComponents(){
+
+    private fun initComponents() {
         vd_name = findViewById(R.id.vd_name)
         vd_country = findViewById(R.id.vd_country)
         vd_city = findViewById(R.id.vd_city)
@@ -51,16 +60,55 @@ class VetDetailsActivity : AppCompatActivity() {
         rv_photos = findViewById(R.id.rv_photos)
         btn_appointment = findViewById(R.id.btn_appointment)
         vd_goBack = findViewById(R.id.vd_goBack)
+        vd_vetType = findViewById(R.id.vd_vetType)
     }
-    private fun initListeners(){
-        btn_appointment.setOnClickListener {  }
-        btn_appointment.setOnClickListener { onBackPressed()
-        finish()}
+
+    private fun initListeners() {
+        btn_appointment.setOnClickListener { }
+        vd_goBack.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
     }
-    private fun initRecyclerViews(){
+
+    private fun initRecyclerViews() {
         rv_services.layoutManager = LinearLayoutManager(this)
-        rv_services.adapter = ServiceAdapter(ServiceProvider.ServiceList)
-        rv_photos.layoutManager = LinearLayoutManager(this)
-        rv_photos.adapter = PhotoAdapter(PhotoProvider.PhotoList)
+        rv_services.adapter = VetList.find { it.id == id }?.servicesTitles?.let { ServiceAdapter(it) }
+        rv_photos.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rv_photos.adapter = VetList.find { it.id == id }?.photos?.let { PhotoAdapter(it) }
+        Log.i("Fotos", VetList.find { it.id == id }?.photos.toString())
+    }
+
+    private fun setValues() {
+        vd_name.text = VetList.find { it.id == id }?.name
+        vd_country.text = VetList.find { it.id == id }?.country
+        vd_city.text = VetList.find { it.id == id }?.city
+        VetList.find { it.id == id }?.attendsEmergencies?.let { setEmergencyStatus(it) }
+        vd_specialty.text = VetList.find { it.id == id }?.specialty
+        vd_experience.text = VetList.find { it.id == id }?.experience
+        vd_species.text = VetList.find { it.id == id }?.species
+        vd_address.text = VetList.find { it.id == id }?.address
+        setSchedule()
+        vd_Refund.text = VetList.find { it.id == id }?.refundPolicy
+        vd_vetType.text = VetList.find { it.id == id }?.vetType
+    }
+
+    private fun setEmergencyStatus(status: String) {
+        when (status) {
+            "y" -> vd_emergency.setImageResource(R.drawable.ic_emergency)
+            "n" -> vd_emergency.setImageResource(R.drawable.ic_emergencyoff)
+            else -> vd_emergency.setImageResource(R.drawable.ic_emergencyoff)
+        }
+    }
+
+    private fun setSchedule() {
+        val scheduleArray = VetList.find { it.id == id }?.schedule
+        val stringBuilder = StringBuilder()
+        if (scheduleArray != null) {
+            for (item in scheduleArray) {
+                stringBuilder.append(item).append("\n")
+            }
+        }
+        vd_schedule.text = stringBuilder.toString()
     }
 }
