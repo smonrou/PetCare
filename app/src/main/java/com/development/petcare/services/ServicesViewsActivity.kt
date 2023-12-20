@@ -9,8 +9,11 @@ import androidx.lifecycle.lifecycleScope
 import com.development.petcare.mains.HomeActivity
 import com.development.petcare.R
 import com.development.petcare.objects.addobject.loaders.LoadGroomers
+import com.development.petcare.objects.addobject.loaders.LoadVet
 import com.development.petcare.objects.addobject.loaders.LoadWalkers
 import com.development.petcare.objects.providers.GroomerProvider.Companion.GroomerList
+import com.development.petcare.objects.providers.PhotoProvider.Companion.PhotoList
+import com.development.petcare.objects.providers.VetProvider.Companion.VetList
 import com.development.petcare.objects.providers.WalkerProvider.Companion.WalkerList
 import kotlinx.coroutines.launch
 
@@ -28,6 +31,7 @@ class ServicesViewsActivity : AppCompatActivity() {
         initListeners()
         updateWalkerList()
         updateGroomerList()
+        updateVetList()
     }
 
     private fun initListeners() {
@@ -82,6 +86,13 @@ class ServicesViewsActivity : AppCompatActivity() {
         GroomerList.clear()
         lifecycleScope.launch {
             LoadGroomers().getDataByCityForPetStylist(intent.getStringExtra("city").toString())
+        }
+    }
+    private fun updateVetList(){
+        VetList.clear()
+        PhotoList.clear()
+        lifecycleScope.launch {
+            LoadVet().getDataByCountryForPetVetList(intent.getStringExtra("city").toString())
         }
     }
 }

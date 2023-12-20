@@ -24,7 +24,7 @@ class VetViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         vetName.text = vetModel.name.toString()
         vetCity.text = vetModel.city.toString()
         vetType.text = vetModel.vetType.toString()
-        vetSpeciality.text = vetModel.speciality.toString()
+        vetSpeciality.text = vetModel.specialty.toString()
         attendEmergencies(vetModel.attendsEmergencies.toString())
         id = vetModel.id.toString()
         cv_vet.setOnClickListener { toDetails() }

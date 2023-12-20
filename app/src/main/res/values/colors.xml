@@ -16,7 +16,20 @@
     <color name="lighter_yellow">#D6CCA2</color>
     <color name="almostBlack">#222222</color>
     <color name="green">#B763A54A</color>
+    
+    <color name="background_green">#2f3e46</color>
+    <color name="mid_background_green">#354f52</color>
+    <color name="background_component_green">#52796f</color>
+    <color name="background_component_selected_green">#84a98c</color>
+    <color name="background_brighter_green">#cad2c5</color>
 
+    <color name="icon_purple">#6b4b62</color>
+    <color name="icon_brown">#A47E67</color>
+    <color name="icon_orange">#d58936</color>
+    <color name="icon_pink">#fbd4bf</color>
+    <color name="icon_green">#64c27b</color>
+
+    <color name="cyan">#114358</color>
     <color name="mid_background">#395C75</color>
     <color name="sky_blue">#C7DEF6</color>
     <color name="light_grey2">#C2C2C2</color>
