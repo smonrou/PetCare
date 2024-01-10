@@ -163,6 +163,7 @@ class VetDetailsActivity : AppCompatActivity() {
             intent.putExtra("userAddress", mail)
             intent.putExtra("userCity", city)
             intent.putExtra("userPhone", phoneNumber)
+            intent.putExtra("carerId", id)
             startActivity(intent)
         }
     }

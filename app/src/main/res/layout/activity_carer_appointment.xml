@@ -133,10 +133,39 @@
                         android:id="@+id/Carer_appointment_petSpinner"
                         android:layout_width="200dp"
                         android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
                         android:background="@drawable/bg_spinner_pet"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/Carer_appointment_txtChosePet" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/pw_div_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/Cream"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Carer_appointment_petSpinner" />
 
+                    <TextView
+                        android:id="@+id/Carer_appointment_txtChoseServ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/choseService"
+                        android:textColor="@color/Cream"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pw_div_5" />
+
+                    <Spinner
+                        android:id="@+id/Carer_appointment_servSpinner"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_spinner_pet"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Carer_appointment_txtChoseServ" />
                     <androidx.cardview.widget.CardView
                         android:id="@+id/pw_div_2"
                         android:layout_width="match_parent"
@@ -144,7 +173,7 @@
                         android:layout_marginTop="16dp"
                         app:cardBackgroundColor="@color/Cream"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/Carer_appointment_petSpinner" />
+                        app:layout_constraintTop_toBottomOf="@+id/Carer_appointment_servSpinner" />
 
                     <TextView
                         android:id="@+id/Carer_appointment_txtChoseDate"

@@ -65,7 +65,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="infoWarning">This information can be seen by the PetWalker</string>
     <string name="yourInfo">Your info</string>
-    <string name="chosePet">Choose the pet you want to receive the service.\n</string>
+    <string name="chosePet">Choose the pet you want to receive the service.</string>
     <string name="choseDate">Choose the Date</string>
     <string name="date">Date</string>
     <string name="choseStartTime">Start Time</string>
@@ -131,4 +131,6 @@
     <string name="address">Address</string>
     <string name="RefundPolicity">Refund Policy</string>
     <string name="photos">Photos</string>
+    <string name="choseService">Choose the service you want to hire.</string>
+    <string name="PetCare_fee">PetCare Fee</string>
 </resources>

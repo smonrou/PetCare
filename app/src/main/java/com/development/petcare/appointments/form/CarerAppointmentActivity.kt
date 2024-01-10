@@ -19,6 +19,7 @@ import com.development.petcare.appointments.details.CarerAppointmentDetailsActiv
 import com.development.petcare.appointments.fragments.DatePickerFragment
 import com.development.petcare.appointments.fragments.StartTimePickerFragment
 import com.development.petcare.objects.providers.PetProvider.Companion.PetList
+import com.development.petcare.objects.providers.VetProvider.Companion.VetList
 
 class CarerAppointmentActivity : AppCompatActivity() {
 
@@ -31,6 +32,7 @@ class CarerAppointmentActivity : AppCompatActivity() {
     private lateinit var Carer_appointment_etTime: EditText
     private lateinit var Carer_appointment_cv_toDetails: CardView
     private lateinit var Carer_appointment_goBack: ImageView
+    private lateinit var Carer_appointment_servSpinner: Spinner
 
 
     private var identification = ""
@@ -42,9 +44,11 @@ class CarerAppointmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carer_appointment)
+        identification = intent.getStringExtra("carerId").toString()
         initComponents()
         initListeners()
         initSpinnerIcon()
+        initServiceSpinner()
         putValues()
     }
 
@@ -58,6 +62,7 @@ class CarerAppointmentActivity : AppCompatActivity() {
         Carer_appointment_etTime = findViewById(R.id.Carer_appointment_etTime)
         Carer_appointment_cv_toDetails = findViewById(R.id.Carer_appointment_cv_toDetails)
         Carer_appointment_goBack = findViewById(R.id.Carer_appointment_goBack)
+        Carer_appointment_servSpinner = findViewById(R.id.Carer_appointment_servSpinner)
     }
 
     private fun initListeners() {
@@ -80,8 +85,11 @@ class CarerAppointmentActivity : AppCompatActivity() {
     }
 
 
-    private fun spinnerSelection(): Int {
+    private fun spinnerPetSelection(): Int {
         return Carer_appointment_petSpinner.selectedItemPosition
+    }
+    private fun spinnerServSelection(): Int {
+        return Carer_appointment_servSpinner.selectedItemPosition
     }
 
     private fun showDatePicker() {
@@ -110,7 +118,8 @@ class CarerAppointmentActivity : AppCompatActivity() {
         intent.putExtra("userCity", Carer_appointment_yourCity.text)
         intent.putExtra("userPhone", Carer_appointment_yourPhoneNumber.text)
         intent.putExtra("carerId", getId())
-        intent.putExtra("pet", spinnerSelection().toString())
+        intent.putExtra("pet", spinnerPetSelection().toString())
+        intent.putExtra("service", spinnerServSelection().toString())
         intent.putExtra("date", date)
         intent.putExtra("time", time)
     }
@@ -181,5 +190,38 @@ class CarerAppointmentActivity : AppCompatActivity() {
                 }
             }
         Carer_appointment_petSpinner.adapter = adapter
+    }
+    private fun initServiceSpinner() {
+        val services = VetList.find { it.id == identification}?.servicesTitles
+        val prices = VetList.find { it.id == identification}?.fees
+        val adapter: ArrayAdapter<String> =
+            object : ArrayAdapter<String>(this, R.layout.spinner_layout_service, services!!) {
+                override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                    return createView(position, convertView, parent)
+                }
+
+                override fun getDropDownView(
+                    position: Int,
+                    convertView: View?,
+                    parent: ViewGroup
+                ): View {
+                    return createView(position, convertView, parent)
+                }
+
+                private fun createView(position: Int, convertView: View?, parent: ViewGroup): View {
+                    val view = convertView ?: layoutInflater.inflate(
+                        R.layout.spinner_layout_service,
+                        parent,
+                        false
+                    )
+                    val price = view.findViewById<TextView>(R.id.spinner_item_price)
+                    val textView = view.findViewById<TextView>(R.id.spinner_item_service)
+                    val item = getItem(position)
+                    textView.text = item
+                    price.text = prices?.get(position)
+                    return view
+                }
+            }
+        Carer_appointment_servSpinner.adapter = adapter
     }
 }
