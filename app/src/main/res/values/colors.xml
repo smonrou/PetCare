@@ -14,7 +14,7 @@
     <color name="light_grey">#CFCCCC</color>
     <color name="light_yellow">#FFE57F</color>
     <color name="lighter_yellow">#D6CCA2</color>
-    <color name="almostBlack">#222222</color>
+    <color name="almostBlack">#252525</color>
     <color name="green">#B763A54A</color>
     
     <color name="background_green">#2f3e46</color>
@@ -37,10 +37,10 @@
     <color name="card">#c0a460</color>
     <color name="notPureWhite">#fdfdfd</color>
 
-    <color name="Background">#2C3E50</color>
+    <color name="Background">#212B32</color>
     <color name="Cream">#f2edde</color>
     <color name="Background_component">#7FB3D5</color>
-    <color name="Background_component_selected">#AED6F1</color>
+    <color name="Background_component_selected">#304453</color>
     <color name="Background_brighter">#9BE2EC</color>
     <color name="Transparent">#65000000</color>
     <color name="Transparent_two">#B2000000</color>

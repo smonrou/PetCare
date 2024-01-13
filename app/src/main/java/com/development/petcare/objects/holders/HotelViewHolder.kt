@@ -18,29 +18,25 @@ class HotelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val hotel_price: TextView = view.findViewById(R.id.hotel_price)
     val cv_hotel: CardView = view.findViewById(R.id.cv_hotel)
 
-    var id = 0;
-    var description: String? = "";
+    var id = ""
+    var description = ""
 
     fun render(hotelModel: Hotel) {
-        hotel_name.text = hotelModel.hotel_name
-        hotel_city.text = hotelModel.hotel_city
-        hotel_price.text = hotelModel.hotel_prices
-        hotel_NumStars.text = hotelModel.hotel_stars
-        id = hotelModel.id_hotel
-        description = hotelModel.hotel_description
+        hotel_name.text = hotelModel.name
+        hotel_city.text = hotelModel.city
+        hotel_price.text = hotelModel.species
+        hotel_NumStars.text = hotelModel.hotelType
+        id = hotelModel.id.toString()
+        description = hotelModel.experience.toString()
         cv_hotel.setOnClickListener { toHotelDetails() }
     }
 
-    fun toHotelDetails() {
+    private fun toHotelDetails() {
         val context = hotel_name.context
         val hotel = HotelProvider.HotelList[adapterPosition]
         val intent = Intent(context, HotelDetailsActivity::class.java)
         intent.putExtra("id", id)
-        intent.putExtra("hotel_name", hotel.hotel_name)
-        intent.putExtra("city", hotel.hotel_city)
-        intent.putExtra("stars", hotel.hotel_stars)
-        intent.putExtra("description", description)
-        intent.putExtra("price", hotel.hotel_prices)
+        intent.putExtra("hotel_name", hotel.name)
         context.startActivity(intent)
     }
 }

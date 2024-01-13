@@ -9,9 +9,11 @@ import androidx.lifecycle.lifecycleScope
 import com.development.petcare.mains.HomeActivity
 import com.development.petcare.R
 import com.development.petcare.objects.addobject.loaders.LoadGroomers
+import com.development.petcare.objects.addobject.loaders.LoadHotel
 import com.development.petcare.objects.addobject.loaders.LoadVet
 import com.development.petcare.objects.addobject.loaders.LoadWalkers
 import com.development.petcare.objects.providers.GroomerProvider.Companion.GroomerList
+import com.development.petcare.objects.providers.HotelProvider.Companion.HotelList
 import com.development.petcare.objects.providers.PhotoProvider.Companion.PhotoList
 import com.development.petcare.objects.providers.VetProvider.Companion.VetList
 import com.development.petcare.objects.providers.WalkerProvider.Companion.WalkerList
@@ -32,6 +34,7 @@ class ServicesViewsActivity : AppCompatActivity() {
         updateWalkerList()
         updateGroomerList()
         updateVetList()
+        updateHotelList()
     }
 
     private fun initListeners() {
@@ -88,11 +91,20 @@ class ServicesViewsActivity : AppCompatActivity() {
             LoadGroomers().getDataByCityForPetStylist(intent.getStringExtra("city").toString())
         }
     }
-    private fun updateVetList(){
+
+    private fun updateVetList() {
         VetList.clear()
         PhotoList.clear()
         lifecycleScope.launch {
             LoadVet().getDataByCountryForPetVetList(intent.getStringExtra("city").toString())
+        }
+    }
+
+    private fun updateHotelList() {
+        HotelList.clear()
+        PhotoList.clear()
+        lifecycleScope.launch {
+            LoadHotel().getDataByCountryForHotelList(intent.getStringExtra("city").toString())
         }
     }
 }

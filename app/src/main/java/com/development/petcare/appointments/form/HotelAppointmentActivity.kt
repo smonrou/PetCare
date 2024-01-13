@@ -101,7 +101,7 @@ class HotelAppointmentActivity : AppCompatActivity() {
         Hotel_appointment_yourAddres.text = intent.getStringExtra("userAddress")
         Hotel_appointment_yourCity.text = intent.getStringExtra("city")
         Hotel_appointment_yourPhoneNumber.text = intent.getStringExtra("userPhone")
-        Hotel_appointment_txtPrice.text = HotelList.find { it.id_hotel == identification.toInt() }!!.hotel_prices
+        Hotel_appointment_txtPrice.text = HotelList.find { it.id == identification }!!.species
 
     }
 

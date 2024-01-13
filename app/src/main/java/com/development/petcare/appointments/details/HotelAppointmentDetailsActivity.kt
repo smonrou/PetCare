@@ -1,7 +1,6 @@
 package com.development.petcare.appointments.details
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -9,7 +8,6 @@ import android.widget.TextView
 import com.development.petcare.R
 import com.development.petcare.objects.providers.HotelProvider.Companion.HotelList
 import com.development.petcare.objects.providers.PetProvider.Companion.PetList
-import com.development.petcare.services.HotelServiceActivity
 
 class HotelAppointmentDetailsActivity : AppCompatActivity() {
     private lateinit var Hotel_details_cv_userName: TextView
@@ -71,14 +69,14 @@ class HotelAppointmentDetailsActivity : AppCompatActivity() {
     private fun putHotelValues() {
         identification = intent.getStringExtra("hotelId").toString()
         Hotel_details_cv_pwName.text =
-            HotelList.find { it.id_hotel == identification.toInt() }?.hotel_name
+            HotelList.find { it.id == identification }?.name
         Hotel_details_cv_pwType.text =
-            HotelList.find { it.id_hotel == identification.toInt() }?.hotel_description
+            HotelList.find { it.id == identification }?.experience
         Hotel_details_cv_pwLocation.text =
-            HotelList.find { it.id_hotel == identification.toInt() }?.hotel_city
+            HotelList.find { it.id == identification }?.city
         Hotel_details_cv_pwPhoneNumber.text = intent.getStringExtra("userPhone")
         Hotel_details_cv2_hourlyPrice.text =
-            HotelList.find { it.id_hotel == identification.toInt() }?.hotel_prices
+            HotelList.find { it.id == identification }?.species
         Hotel_details_cv2_hourPrice.text = intent.getStringExtra("dateDifference")
     }
 

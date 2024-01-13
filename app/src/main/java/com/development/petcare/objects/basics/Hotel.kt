@@ -4,29 +4,51 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Hotel(
-    val id_hotel: Int,
-    val hotel_name: String?,
-    val hotel_city: String?,
-    var hotel_stars: String?,
-    val hotel_description: String?,
-    val hotel_prices: String?
+    val id: String?,
+    val name: String?,
+    val address: String?,
+    val city: String?,
+    val country: String?,
+    val experience: String?,
+    val species: String?,
+    val hotelType: String?,
+    val extrasTitles : List<String>?,
+    val extrasDesc: List<String>?,
+    val extrasFees: List<String>?,
+    val schedule: List<String>?,
+    val bedrooms: List<Bedroom>?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
-    )
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.createStringArrayList(),
+        parcel.createStringArrayList(),
+        parcel.createStringArrayList(),
+        parcel.createStringArrayList(),
+        parcel.createTypedArrayList(Bedroom)
+    ) {
+    }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(id_hotel)
-        parcel.writeString(hotel_name)
-        parcel.writeString(hotel_city)
-        parcel.writeString(hotel_stars)
-        parcel.writeString(hotel_description)
-        parcel.writeString(hotel_prices)
+        parcel.writeString(id)
+        parcel.writeString(name)
+        parcel.writeString(address)
+        parcel.writeString(city)
+        parcel.writeString(country)
+        parcel.writeString(experience)
+        parcel.writeString(species)
+        parcel.writeString(hotelType)
+        parcel.writeStringList(extrasTitles)
+        parcel.writeStringList(extrasDesc)
+        parcel.writeStringList(extrasFees)
+        parcel.writeStringList(schedule)
+        parcel.writeTypedList(bedrooms)
     }
 
     override fun describeContents(): Int {
@@ -42,4 +64,6 @@ data class Hotel(
             return arrayOfNulls(size)
         }
     }
+
+
 }

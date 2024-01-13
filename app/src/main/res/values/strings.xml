@@ -133,4 +133,7 @@
     <string name="photos">Photos</string>
     <string name="choseService">Choose the service you want to hire.</string>
     <string name="PetCare_fee">PetCare Fee</string>
+    <string name="includes">Includes</string>
+    <string name="bedrooms">Bedrooms</string>
+    <string name="extras">Extras</string>
 </resources>
