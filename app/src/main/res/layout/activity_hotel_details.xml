@@ -15,303 +15,302 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/Hotel_details_go_back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:contentDescription="Go back"
                 android:src="@drawable/ic_goback"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/white"
-                android:contentDescription="Go back"
                 tools:ignore="HardcodedText" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/hotel_details_cv_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="50dp"
-                    android:background="@drawable/rounded_background_component_selected"
-                    app:cardCornerRadius="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_details_cv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:background="@drawable/rounded_background_component_selected"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/hotel_details_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="24sp"
-                        android:textStyle="bold|italic"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Descanso Cultural" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/hotel_details_cv_city"
+                <TextView
+                    android:id="@+id/hotel_details_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/rounded_background_component_selected"
-                    app:cardCornerRadius="16dp"
-                    app:layout_constraintEnd_toStartOf="@+id/hotel_details_cv_country"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv_title">
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Descanso Cultural" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/hotel_details_city"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="18sp"
-                        android:textStyle="bold|italic"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Chiquimula" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/hotel_details_cv_country"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_details_cv_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_background_component_selected"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/hotel_details_cv_country"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv_title">
+
+                <TextView
+                    android:id="@+id/hotel_details_city"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/rounded_background_component_selected"
-                    app:cardCornerRadius="16dp"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/hotel_details_cv_city"
-                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv_title">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Chiquimula" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/hotel_details_country"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="18sp"
-                        android:textStyle="bold|italic"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Guatemala" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_details_cv_country"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_background_component_selected"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hotel_details_cv_city"
+                app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv_title">
+
+                <TextView
+                    android:id="@+id/hotel_details_country"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Guatemala" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_details_cv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_background_no_color"
+                app:cardBackgroundColor="@color/almostBlack"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hotel_details_cv_city"
+                app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv_country">
+
+                <TextView
+                    android:id="@+id/hotel_details_cv2_experienceTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/experience"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/hotel_details_cv2_experience"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2_experienceTxt"
+                    tools:text="Hotel Descanso Cultural abrió sus puertas el año 2003, brindando el mejor servicio a sus huéspedes, buscando darle la mayor comodidad y alegría a las mascotas. Contamos con personal muy calificado para cada puesto, amable, cariñoso y sobre todo, cuidadoso con los huéspedes." />
+
+                <TextView
+                    android:id="@+id/hotel_details_cv2_speciesTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/species"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2_experience" />
+
+                <TextView
+                    android:id="@+id/hotel_details_cv2_species"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2_speciesTxt"
+                    tools:text="Atendemos a todos los animales domésticos que pesan menos de 100lb" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_details_cv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_background_component_selected"
+                app:cardBackgroundColor="@color/almostBlack"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hotel_details_cv_city"
+                app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2">
+
+                <TextView
+                    android:id="@+id/hotel_details_cv3_bedroomsTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/bedrooms"
+                    android:textAlignment="center"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/hotel_details_cv2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/rounded_background_no_color"
-                    app:cardBackgroundColor="@color/almostBlack"
-                    app:cardCornerRadius="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/hotel_details_cv_city"
-                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv_country">
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv2_experienceTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/experience"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv2_experience"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="12dp"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="14sp"
-                        android:textStyle="normal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2_experienceTxt"
-                        tools:text="Hotel Descanso Cultural abrió sus puertas el año 2003, brindando el mejor servicio a sus huéspedes, buscando darle la mayor comodidad y alegría a las mascotas. Contamos con personal muy calificado para cada puesto, amable, cariñoso y sobre todo, cuidadoso con los huéspedes." />
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv2_speciesTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/species"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2_experience" />
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv2_species"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="12dp"
-                        android:layout_marginBottom="16dp"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="14sp"
-                        android:textStyle="normal"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2_speciesTxt"
-                        tools:text="Atendemos a todos los animales domésticos que pesan menos de 100lb" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/hotel_details_cv3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/rounded_background_component_selected"
-                    app:cardBackgroundColor="@color/almostBlack"
-                    app:cardCornerRadius="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/hotel_details_cv_city"
-                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv2">
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv3_bedroomsTxt"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/bedrooms"
-                        android:textAlignment="center"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@drawable/rounded_background_no_color"
-                        app:cardBackgroundColor="@color/grey"
-                        app:cardCornerRadius="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv3_bedroomsTxt">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_bedrooms"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/hotel_details_cv4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/rounded_background_no_color"
-                    app:cardBackgroundColor="@color/almostBlack"
+                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/hotel_details_cv3">
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv4_scheduleTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/schedule"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv4_schedules"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="12dp"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="14sp"
-                        android:textStyle="normal"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv4_scheduleTxt"
-                        tools:text="Lunes a Viernes: 12PM a 10AM\nSábado y Domingo: 1PM a 12AM" />
-
-                    <TextView
-                        android:id="@+id/hotel_details_cv4_extrasTxt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/extras"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/notPureWhite"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv4_schedules" />
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv3_bedroomsTxt">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_extras"
+                        android:id="@+id/rv_bedrooms"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="12dp"
+                        android:padding="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv4_extrasTxt" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hotel_details_cv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_background_no_color"
+                app:cardBackgroundColor="@color/almostBlack"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotel_details_cv3">
+
+                <TextView
+                    android:id="@+id/hotel_details_cv4_scheduleTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/schedule"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/hotel_details_cv4_schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv4_scheduleTxt"
+                    tools:text="Lunes a Viernes: 12PM a 10AM\nSábado y Domingo: 1PM a 12AM" />
+
+                <TextView
+                    android:id="@+id/hotel_details_cv4_extrasTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/extras"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/notPureWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv4_schedules" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_extras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotel_details_cv4_extrasTxt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="42dp"
                 android:background="@drawable/rounded_background_no_color"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hotel_details_cv4">

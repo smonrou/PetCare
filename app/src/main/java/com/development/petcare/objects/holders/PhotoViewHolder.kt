@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.development.petcare.R
 
 class PhotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    var itemPhotoImage: ImageView = view.findViewById(R.id.item_photo_image)
+    private var itemPhotoImage: ImageView = view.findViewById(R.id.item_photo_image)
 
     fun render(photoModel: String) {
         Glide.with(itemPhotoImage.context).load(photoModel).error(R.drawable.panoramica).into(itemPhotoImage)
