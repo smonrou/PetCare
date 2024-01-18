@@ -12,7 +12,8 @@ import com.development.petcare.objects.providers.HotelProvider
 import com.development.petcare.objects.adapters.HotelAdapter
 
 class HotelServiceActivity : AppCompatActivity() {
-    private lateinit var hotel_service_home: ImageView
+    private lateinit var hotelServiceHome: ImageView
+    private lateinit var recyclerView:RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,14 +25,14 @@ class HotelServiceActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
-        hotel_service_home = findViewById(R.id.hotel_service_home)
+        hotelServiceHome = findViewById(R.id.hotel_service_home)
+        recyclerView = findViewById(R.id.recyclerView_hotel)
     }
 
     private fun initListeners() {
-        hotel_service_home.setOnClickListener { toHome() }
+        hotelServiceHome.setOnClickListener { toHome() }
     }
     private fun initRecycleView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_hotel)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = HotelAdapter(HotelProvider.HotelList)
     }
