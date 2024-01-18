@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView
 import com.development.petcare.R
 import com.development.petcare.mains.HomeActivity
 import com.development.petcare.mains.ProviderType
+import com.development.petcare.objects.providers.UserProvider
 import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class AuthActivity : AppCompatActivity() {
         initComponents()
         initListeners()
         credentials()
+        UserProvider.activeUserList.clear()
     }
 
     fun initComponents() {

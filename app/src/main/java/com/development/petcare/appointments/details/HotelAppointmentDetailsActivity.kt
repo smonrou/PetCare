@@ -51,6 +51,7 @@ class HotelAppointmentDetailsActivity : AppCompatActivity() {
         Hotel_details_cv2_hourlyPrice = findViewById(R.id.Hotel_details_cv2_hourlyPrice)
         Hotel_details_cv2_hourPrice = findViewById(R.id.Hotel_details_cv2_hourPrice)
         Hotel_details_go_back = findViewById(R.id.Hotel_details_go_back)
+
     }
 
     private fun initListeners() {
@@ -71,7 +72,7 @@ class HotelAppointmentDetailsActivity : AppCompatActivity() {
         Hotel_details_cv_pwName.text =
             HotelList.find { it.id == identification }?.name
         Hotel_details_cv_pwType.text =
-            HotelList.find { it.id == identification }?.experience
+            HotelList.find { it.id == identification }?.address
         Hotel_details_cv_pwLocation.text =
             HotelList.find { it.id == identification }?.city
         Hotel_details_cv_pwPhoneNumber.text = intent.getStringExtra("userPhone")

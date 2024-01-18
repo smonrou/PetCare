@@ -3,6 +3,7 @@ package com.development.petcare.mains
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -10,7 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import com.development.petcare.R
 import com.development.petcare.mains.conections.UserCRUD
 import com.development.petcare.objects.addobject.loaders.LoadPets
+import com.development.petcare.objects.basics.ActiveUser
 import com.development.petcare.objects.providers.PetProvider.Companion.PetList
+import com.development.petcare.objects.providers.UserProvider.Companion.activeUserList
 import com.development.petcare.services.MyPetsViewsActivity
 import com.development.petcare.services.ServicesViewsActivity
 import com.google.firebase.Firebase
@@ -20,15 +23,20 @@ import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var btn_profile: ImageView
-    private lateinit var cv_myPets: CardView
+    private lateinit var btnProfile: ImageView
+    private lateinit var cvMyPets: CardView
     private lateinit var cvServices: CardView
-    private lateinit var txt_name: TextView
+    private lateinit var txtName: TextView
 
     private var username = ""
     private var userMail = ""
     private var userCity = ""
     private var photoURL = ""
+    private var phoneNumber = ""
+    private var country = ""
+    private var age = ""
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,19 +47,20 @@ class HomeActivity : AppCompatActivity() {
         loadInfo()
 
         updateList()
+
     }
 
     private fun initComponents() {
-        btn_profile = findViewById(R.id.btn_profile)
-        cv_myPets = findViewById(R.id.cv_myPets)
+        btnProfile = findViewById(R.id.btn_profile)
+        cvMyPets = findViewById(R.id.cv_myPets)
         cvServices = findViewById(R.id.cvServices)
-        txt_name = findViewById(R.id.txt_name)
+        txtName = findViewById(R.id.txt_name)
 
     }
 
     private fun initListener() {
-        btn_profile.setOnClickListener { openProfile() }
-        cv_myPets.setOnClickListener { openMyPets() }
+        btnProfile.setOnClickListener { openProfile() }
+        cvMyPets.setOnClickListener { openMyPets() }
         cvServices.setOnClickListener { openServices() }
     }
 
@@ -70,6 +79,19 @@ class HomeActivity : AppCompatActivity() {
                 )
             }
         }
+    }
+
+    private fun userData() {
+        val user = ActiveUser(
+            username,
+            age,
+            country,
+            userCity,
+            userMail,
+            phoneNumber
+        )
+        activeUserList.add(user)
+        Log.i("UserInfo", user.toString())
     }
 
     private fun getUserData(callback: (Map<String, Any>?) -> Unit) {
@@ -97,12 +119,17 @@ class HomeActivity : AppCompatActivity() {
                     userMail = (dataUser["user_email"] as? String).toString()
                     userCity = (dataUser["userCity"] as? String).toString()
                     photoURL = (dataUser["profilePicture"] as? String).toString()
-                    txt_name.text = username
+                    phoneNumber = (dataUser["phoneNumber"] as? String).toString()
+                    country = dataUser["nationality"].toString()
+                    age = dataUser["age"].toString()
+                    txtName.text = username
+                    userData()
                 } else {
                     loadInfo()
                 }
             }
         }
+
     }
 
     private fun sendInfo(intent: Intent) {

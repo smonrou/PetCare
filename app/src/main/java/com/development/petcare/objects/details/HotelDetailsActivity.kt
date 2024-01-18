@@ -14,16 +14,16 @@ import com.development.petcare.objects.adapters.ExtrasAdapter
 import com.development.petcare.objects.providers.HotelProvider.Companion.HotelList
 
 class HotelDetailsActivity : AppCompatActivity() {
-    private lateinit var hotel_details_name:TextView
-    private lateinit var hotel_details_city:TextView
-    private lateinit var hotel_details_country:TextView
-    private lateinit var hotel_details_cv2_experience:TextView
-    private lateinit var hotel_details_cv2_species:TextView
-    private lateinit var rv_bedrooms:RecyclerView
-    private lateinit var hotel_details_cv4_schedules:TextView
-    private lateinit var rv_extras:RecyclerView
-    private lateinit var hotel_details_makeAppointment:TextView
-    private lateinit var Hotel_details_go_back:ImageView
+    private lateinit var hotel_details_name: TextView
+    private lateinit var hotel_details_city: TextView
+    private lateinit var hotel_details_country: TextView
+    private lateinit var hotel_details_cv2_experience: TextView
+    private lateinit var hotel_details_cv2_species: TextView
+    private lateinit var rv_bedrooms: RecyclerView
+    private lateinit var hotel_details_cv4_schedules: TextView
+    private lateinit var rv_extras: RecyclerView
+    private lateinit var hotel_details_makeAppointment: TextView
+    private lateinit var Hotel_details_go_back: ImageView
     var id = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +50,8 @@ class HotelDetailsActivity : AppCompatActivity() {
         hotel_details_makeAppointment.setOnClickListener { toHotelAppointment() }
         Hotel_details_go_back.setOnClickListener { onBackPressed() }
     }
-    private fun initValues(){
+
+    private fun initValues() {
         val id = intent.getStringExtra("id")
         hotel_details_name.text = HotelList.find { it.id == id }?.name.toString()
         hotel_details_city.text = HotelList.find { it.id == id }?.city.toString()
@@ -59,19 +60,22 @@ class HotelDetailsActivity : AppCompatActivity() {
         hotel_details_cv2_species.text = HotelList.find { it.id == id }?.species.toString()
         setSchedule()
     }
-    private fun initRecyclerViews(){
+
+    private fun initRecyclerViews() {
         rv_bedrooms = findViewById(R.id.rv_bedrooms)
         rv_extras = findViewById(R.id.rv_extras)
-        rv_bedrooms.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        rv_bedrooms.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv_bedrooms.adapter = HotelList.find { it.id == id }?.bedrooms?.let { BedroomAdapter(it) }
         rv_extras.layoutManager = LinearLayoutManager(this)
         rv_extras.adapter = HotelList.find { it.id == id }?.extrasTitles?.let { ExtrasAdapter(it) }
     }
-    private fun toHotelAppointment(){
+
+    private fun toHotelAppointment() {
         val intent = Intent(this, HotelAppointmentActivity::class.java)
         intent.putExtra("id", id)
         startActivity(intent)
     }
+
     private fun setSchedule() {
         val scheduleArray = HotelList.find { it.id == id }?.schedule
         val stringBuilder = StringBuilder()

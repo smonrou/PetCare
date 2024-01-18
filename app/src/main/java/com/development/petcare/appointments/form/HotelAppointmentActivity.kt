@@ -19,6 +19,7 @@ import com.development.petcare.appointments.details.HotelAppointmentDetailsActiv
 import com.development.petcare.appointments.fragments.DatePickerFragment
 import com.development.petcare.objects.providers.HotelProvider.Companion.HotelList
 import com.development.petcare.objects.providers.PetProvider.Companion.PetList
+import com.development.petcare.objects.providers.UserProvider.Companion.activeUserList
 
 
 class HotelAppointmentActivity : AppCompatActivity() {
@@ -97,16 +98,15 @@ class HotelAppointmentActivity : AppCompatActivity() {
     }
 
     private fun putValues() {
-        Hotel_appointment_yourName.text = intent.getStringExtra("userName")
-        Hotel_appointment_yourAddres.text = intent.getStringExtra("userAddress")
-        Hotel_appointment_yourCity.text = intent.getStringExtra("city")
-        Hotel_appointment_yourPhoneNumber.text = intent.getStringExtra("userPhone")
+        Hotel_appointment_yourName.text = activeUserList[0].name
+        Hotel_appointment_yourAddres.text = activeUserList.first().email
+        Hotel_appointment_yourCity.text = activeUserList.first().city
+        Hotel_appointment_yourPhoneNumber.text = activeUserList.first().phone
         Hotel_appointment_txtPrice.text = HotelList.find { it.id == identification }!!.species
-
     }
 
     private fun getId(): String {
-        identification = intent.getStringExtra("hotelId").toString()
+        identification = intent.getStringExtra("id").toString()
         return identification
     }
 
